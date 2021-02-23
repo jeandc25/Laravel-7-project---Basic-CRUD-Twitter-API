@@ -18,6 +18,7 @@ Route::get('/','Guestcontroller@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/entries/create', 'EntryController@create')->name('entrycreate');
 Route::post('/entries', 'EntryController@store');
 
@@ -26,3 +27,9 @@ Route::get('/entries/{entry}/edit', 'EntryController@edit');
 Route::put('/entries/{entry}', 'EntryController@update');
 
 Route::get('/users/{user}', 'UserController@show');
+
+Route::get('/categorias/crear', 'CategoriasController@create')->name('crearcategoria');
+Route::post('/categorias', 'CategoriasController@store');
+
+Route::get('/categorias/mostrar', 'listcatcontroller@show');
+
